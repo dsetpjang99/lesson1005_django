@@ -17,6 +17,10 @@
 
     </form>
     {{message}}
+    <!-- jinja2語法 -->
+    <!-- 使用urls.py的name去對應前往之網頁頁面 -->
+    <!-- user\urls => path("profile/", views.user_profile, name="profile" ) -->
+    <a href="{% url 'profile' %}">返回首頁</a>
 
 </body>
 

@@ -2,4 +2,17 @@
 
 {% block content %}
 <h1>Todolist</h1>
+
+<!-- 以迴圈語法呈現待辦事項資料表 -->
+{% for todo in todos %}
+<ul>
+    <li>{{todos.title}}</li>
+    <li>{{todos.text}}</li>
+    <li>{{todos.created}}</li>
+    <li>{{todos.date_completed}}</li>
+    <li>{{todos.important}}</li>
+</ul>
+{{todos}}
+{% endfor %}
+
 {% endblock %}

@@ -56,7 +56,8 @@ ROOT_URLCONF = "todolist.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        # 所有子頁面共用(繼承)父頁面的模板位置 => templates/base.html
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

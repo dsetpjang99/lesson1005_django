@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{user}}
+    <h1>Login</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">帳號</label>
+        <!-- views.user_login =>
+        username = request.session.get("username", "")
+        
+        return render(
+        request,
+        "user/login.html",
+        {"message": message, "user": user, "username": username},
+        -->
+        <input type="text" name="username" id="username" value="{{username}}"><br>
+        <label for="">密碼</label>
+        <input type="password" name="password" id="password"><br>
+        <p>
+            <input type="submit" name="login" value="登入">
+            <input type="submit" name="register" value="註冊">
+            <button type="reset">清除</button>
+        </p>
+    </form>
+    <div style="color: red;">{{message}}</div>
+
+    <!-- jinja2語法 -->
+    <!-- 使用urls.py的name去對應前往之網頁頁面 -->
+    <!-- user\urls => path("profile/", views.user_profile, name="profile" ) -->
+    <a href="{% url 'profile' %}">返回首頁</a>
+
+</body>
+
+</html>

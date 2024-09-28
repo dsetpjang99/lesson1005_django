@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block content %}
+<h1>註冊頁面</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <button type="sumbit">提交</button>
 
-<body>
-    <h1>註冊頁面</h1>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{form}}
+</form>
+{{message}}
+<!-- jinja2語法 -->
+<!-- 使用urls.py的name去對應前往之網頁頁面 -->
+<!-- user\urls => path("profile/", views.user_profile, name="profile" ) -->
+<a href="{% url 'profile' %}">返回首頁</a>
 
-        <button type="sumbit">提交</button>
-
-    </form>
-    {{message}}
-    <!-- jinja2語法 -->
-    <!-- 使用urls.py的name去對應前往之網頁頁面 -->
-    <!-- user\urls => path("profile/", views.user_profile, name="profile" ) -->
-    <a href="{% url 'profile' %}">返回首頁</a>
-
-</body>
-
-</html>
+{% endblock%}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar {
+            background-color: rgb(150, 150, 255);
+            padding: 12px;
+        }
+
+        .username {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        {% if user.is_authenticated %}
+        使用者:{{user.username}}
+        <!-- jinja2語法 -->
+        <!-- 使用urls.py的name去對應前往之網頁頁面 -->
+        <!-- user\urls => path("logout/", views.user_logout, name="logout" ) -->
+        <a href="{% url 'logout' %}">登出</a>
+        {% else %}
+        <!-- jinja2語法 -->
+        <!-- 使用urls.py的name去對應前往之網頁頁面 -->
+        <!-- user\urls => path("login/", views.user_login, name="login" ) -->
+        <!-- user\urls => path("register/", views.user_register, name="register" ) -->
+        <a href="{% url 'login' %}">登入</a>
+        <a href="{% url 'register' %}">註冊</a>
+
+        {% endif %}
+    </div>
+    {% block contnet %}
+
+    {% endblock %}
+
+
+    <div style="color: red;">{{message}}</div>
+
+</body>
+
+</html>

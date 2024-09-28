@@ -6,7 +6,12 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 
-def index(request):
+def user_login(request):
+
+    return render(request, "user/login.html")
+
+
+def user_register(request):
     # return HttpResponse("<h1>Hello Django!</h1>")
     message = ""
     form = UserCreationForm()

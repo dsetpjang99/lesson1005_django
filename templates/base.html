@@ -40,9 +40,10 @@
         <!-- user\urls => path("login/", views.user_login, name="login" ) -->
         <!-- user\urls => path("register/", views.user_register, name="register" ) -->
         <a class="button" style="background-color:aqua;" href="{% url 'login' %}">登入</a>
-        <a class="button" style="background-color:coral;" href="{% url 'register' %}">註冊</a>
+        <a class="button" href="{% url 'register' %}">註冊</a>
 
         {% endif %}
+        <a class="button" style="background-color:white;" href="/">回首頁</a>
     </div>
     {% block content %}
 

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 以下為新增項目
     "user.apps.UserConfig",
+    "todo.apps.TodoConfig",
 ]
 
 MIDDLEWARE = [

@@ -33,15 +33,19 @@
 
 {% block content %}
 <h1>Todo</h1>
+
+<!-- {{form}} -->
+{% if todo %}
 <div class="created">建立時間:{{todo.created}}</div>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    {% if form %}
-    <button type="submit">更新</button>
-    <button type="reset">清除</button>
+<div class="title">標題:{{todo.title}}</div>
+<div class="text">內容:{{todo.text}}</div>
+<div class="imp">
+    是否重要:{% if todo.important %}
+    <span style="color:red">重要</span>
+    {% else %}
+    <span style="color:blue">一般</span>
     {% endif %}
-</form>
-
-
+</div>
+<div>完成時間:{{todo.date_completed}}</div>
+{% endif %}
 {% endblock %}

@@ -16,5 +16,11 @@ class Todo(models.Model):
     # 每一個todo資料，必須敘明是哪一位使用者新增的
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    completed = models.BooleanField(default=False)
+
+    class Meta:
+        # 排序功能 降冪
+        ordering = ["-created"]
+
     def __str__(self):
         return f"{self.id}--{self.title}"

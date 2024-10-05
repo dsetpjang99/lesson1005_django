@@ -54,6 +54,9 @@
         <!-- 使用urls.py的name去對應前往之網頁頁面 -->
         <!-- todo\urls => path("create-todo/", views.create_todo, name="create-todo"), -->
         <a class="button" style="background-color:rgb(97, 255, 162);" href="{% url 'create-todo' %}">建立事項</a>
+
+        <a class="button" style="background-color:rgb(255, 191, 0);" href="{% url 'completed' %}">已完成事項</a>
+
         {% else %}
         <!-- jinja2語法 -->
         <!-- 使用urls.py的name去對應前往之網頁頁面 -->

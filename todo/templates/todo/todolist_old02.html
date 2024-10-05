@@ -68,7 +68,6 @@
 
 
 {% for todo in todos %}
-{% if not todo.completed %}
 <div class="todo">
     <div class="created">{{todo.created}}</div>
     <a class="button del-button" href="{% url 'delete-todo' todo.id %}" onclick="return confirm('確定刪除?')">刪除</a>
@@ -90,7 +89,6 @@
         {% endif %}
     </div>
 </div>
-{% endif %}
 {% endfor %}
 
 {% endblock %}

@@ -51,6 +51,9 @@
         <!-- 使用urls.py的name去對應前往之網頁頁面 -->
         <!-- user\urls => path("logout/", views.user_logout, name="logout" ) -->
         <a class="button" style="background-color: red;" href="{% url 'logout' %}">登出</a>
+        <!-- 使用urls.py的name去對應前往之網頁頁面 -->
+        <!-- todo\urls => path("create-todo/", views.create_todo, name="create-todo"), -->
+        <a class="button" style="background-color:rgb(97, 255, 162);" href="{% url 'create-todo' %}">建立事項</a>
         {% else %}
         <!-- jinja2語法 -->
         <!-- 使用urls.py的name去對應前往之網頁頁面 -->
@@ -60,7 +63,7 @@
         <a class="button" href="{% url 'register' %}">註冊</a>
 
         {% endif %}
-        <a class="button" style="background-color:white;" href="/">回首頁</a>
+        <a class="button" style="background-color:white;" href="{% url 'todolist' %}">回首頁</a>
     </div>
 
     <div id="container">

@@ -53,9 +53,20 @@
 
 <div class="todo">
     <div class="created">{{todo.created}}</div>
-    <div class="title">{{todo.title}}</div>
+    <div class="title">
+        <!-- jinja2語法 -->
+        <!-- 使用urls.py的name去對應前往之網頁頁面 -->
+        <!-- todo\urls => path("todo/<int:id>", views.todo, name="todo"), -->
+        <a href="{% url 'todo' todo.id %}">{{todo.title}}</a>
+    </div>
     <div class="text">{{todo.text}}</div>
-    <div class="imp">{{todo.important}}</div>
+    <div class="imp">
+        {% if todo.imporant %}
+        <span style="color: red;">*重要</span>
+        {% else %}
+        <span style="color: blue;">一般</span>
+        {% endif %}
+    </div>
 
 
 </div>

@@ -43,12 +43,12 @@ def user_login(request):
                 if user:
                     message = "登入成功!"
                     login(request, user)
-                    
+
                     time.sleep(3)
 
                     # redirect 對應的網址名稱(使用urls.py的name去對應)
                     # user\urls => path("profile/", views.user_profile, name="profile" )
-                    return redirect("profile")
+                    return redirect("todolist")
                 else:
                     message = "帳號或密碼錯誤!"
 

@@ -1,18 +1,64 @@
 {% extends "base.html" %}
 
+{% block style %}
+
+<head>
+    <style>
+        .todo {
+            display: inline-block;
+            width: 300px;
+            background-color: white;
+            margin: 12px;
+            border-radius: 6px;
+
+        }
+
+        .title {
+            font-size: 24px;
+            margin: 6px 0;
+        }
+
+        .text {
+            height: 100px;
+            text-align: left;
+            padding: 12px;
+            background-color: rgb(229, 229, 229);
+            margin: 12px;
+            border-radius: 6px;
+
+        }
+
+        .imp {
+            text-align: right;
+            margin: 1px 12px;
+            color: blue;
+        }
+
+
+        .created {
+            font-size: small;
+            text-align: left;
+            margin: 6px;
+        }
+    </style>
+</head>
+
+{% endblock %}
+
 {% block content %}
 <h1>Todolist</h1>
 
 <!-- 以迴圈語法呈現待辦事項資料表 -->
 {% for todo in todos %}
-<ul>
-    <li>{{todos.title}}</li>
-    <li>{{todos.text}}</li>
-    <li>{{todos.created}}</li>
-    <li>{{todos.date_completed}}</li>
-    <li>{{todos.important}}</li>
-</ul>
-{{todos}}
+
+<div class="todo">
+    <div class="created">{{todo.created}}</div>
+    <div class="title">{{todo.title}}</div>
+    <div class="text">{{todo.text}}</div>
+    <div class="imp">{{todo.important}}</div>
+
+
+</div>
 {% endfor %}
 
 {% endblock %}

@@ -5,6 +5,10 @@ from .models import Todo
 
 
 def todolist(request):
-    todos = Todo.objects.all()
+    user = request.user
+    todos = None
+    if user.is_authenticated:
+        todos = Todo.objects.filter(user=user)
+
     print(todos)
     return render(request, "todo/todolist.html", {"todos": todos})
